@@ -115,7 +115,7 @@ async function switchModelExample(){
 			//viewer.poster = model.poster;
 			document.querySelector("#lazy-load-poster").style.backgroundImage = "url(" + model.poster + ")";
 			viewer.querySelector("#button-load").innerText = "Load 3D model: " + model.name;
-			viewer.showPoster();
+			//viewer.showPoster();
 	        viewer.setAttribute("src", model.filename);
 
 		}
@@ -206,6 +206,18 @@ function showDimensionLines() {
 	// Call renderSVG function
 	renderSVG();
 }
+// add functionality to annotations
+document.querySelectorAll("button").forEach(function(hotspot) {
+	console.log("annotations selected");
+	hotspot.addEventListener('click', function() {
+	
+		console.log('annotation clicked!');
+		hotspot.classList.add('Hotspot-visited');
+	  });
+});
+
+
+// dismiss poster once model is loaded 
 
 document.querySelector('#button-load').addEventListener('click',
     function(){
