@@ -99,7 +99,18 @@ body {
 	transform: translateY(-50%);
 }
 
-
+/*for dimension lines */
+#dimensionLine {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+  }
+.dot {
+	display:none;
+}
+  
 
 model-viewer:focus{
 	outline: 4px solid #9ec5fe;

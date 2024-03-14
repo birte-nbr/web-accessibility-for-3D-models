@@ -1,9 +1,10 @@
-
+// define model (low and high detail)
 let models = [
 	{name: "very detailed (14MB)", filename: "models/sagrada-familia.glb", poster: "models/cathedral.webp"},
 	{name: "less detailed (2MB)", filename: "models/sagrada-familia.glb", poster: "models/cathedral.webp"}
 ]
 
+// call all functions 
 resizeModel();
 zoomModel();
 setAutoRotateModel();
@@ -13,8 +14,9 @@ switchModelExample();
 zoomModel();
 setRotateSpeedOfModel();
 setOrbitSensitivityForModel();
+showDimensionLines();
 
-
+// all functions are written here, most are for setting the model up (zoom, annotations, size, etc.)
 function initModelSelector(){
 	const parentElement = document.getElementById("model-chooser")
 	models.map(function(model){
@@ -159,6 +161,51 @@ async function reloadModel(){
     await model_element.updateComplete;
 	setShowAnnotations();
 }
+// here is the code for the dimension lines 
+// this code currently doesn't work but it is also not interfering with anything so 
+function showDimensionLines() {
+	var model_element = document.getElementById("model-container");
+	
+
+	modelViewer.addEventListener('loaded', () => {
+		const dimLines = modelViewer.querySelectorAll('line.dimensionLine');
+		
+		// dimLines.setAttribute('x1', 'newX1');
+		// svgLine.setAttribute('y1', 'newY1');
+		// svgLine.setAttribute('x2', 'newX2');
+		// svgLine.setAttribute('y2', 'newY2');
+	  });
+
+
+	  const renderSVG = () => {
+		// Retrieve positions of dots
+		const start_point = model_element.queryHotspot('hotspot-dot-X+Y-Z');
+		const middle_point = model_element.queryHotspot('hotspot-dot-X-Y-Z');
+		const end_point = model_element.queryHotspot('hotspot-dim-X-Z');
+	
+		// Calculate coordinates for the lines based on dot positions
+		const line1 = document.getElementById('line1');
+		line1.setAttribute('x1', start_point.x);
+		line1.setAttribute('y1', start_point.y);
+		line1.setAttribute('x2', middle_point.x);
+		line1.setAttribute('y2', middle_point.y);
+	
+		const line2 = document.getElementById('line2');
+		line2.setAttribute('x1', middle_point.x);
+		line2.setAttribute('y1', middle_point.y);
+		line2.setAttribute('x2', end_point.x);
+		line2.setAttribute('y2', end_point.y);
+	
+		const line3 = document.getElementById('line3');
+		line3.setAttribute('x1', end_point.x);
+		line3.setAttribute('y1', end_point.y);
+		line3.setAttribute('x2', start_point.x);
+		line3.setAttribute('y2', start_point.y);
+	};
+	
+	// Call renderSVG function
+	renderSVG();
+}
 
 document.querySelector('#button-load').addEventListener('click',
     function(){
@@ -168,3 +215,5 @@ document.querySelector('#button-load').addEventListener('click',
 document.querySelector("#Basílica-de-la-Sagrada-Familía").addEventListener("load", function () {
 	initVariantSelector();
 });
+
+
