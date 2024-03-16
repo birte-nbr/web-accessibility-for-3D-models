@@ -16,6 +16,7 @@ setRotateSpeedOfModel();
 setOrbitSensitivityForModel();
 //showDimensionLines();
 
+
 // all functions are written here, most are for setting the model up (zoom, annotations, size, etc.)
 function initModelSelector(){
 	const parentElement = document.getElementById("model-chooser")
@@ -211,31 +212,57 @@ function showDimensionLines() {
 // to be added yet: line to textbox (maybe), connection to sidebar is missing 
 // can be written more effiently for sure! maybe put this all in a function as well
 //function showTextBox(){
-	document.querySelectorAll(".Hotspot").forEach(function(hotspot) {
-		hotspot.addEventListener('click', function() {
+
+// retrieves the id from clicked dot
+function getHotspotID(hotspot){
+	hotspot.addEventListener('click', function() {
 		
-			console.log('annotation clicked!');
-			hotspot.classList.add('-visited');
-			let annotationID = hotspot.getAttribute("slot"); // equals to hotspot-1
-			console.log(annotationID);
-			//var showTextBox = true;   
-			let id = annotationID.split('-');   // only get number
-			annotationID = id[1];
-			let textbox = document.getElementById("textbox-"+annotationID);
-			textbox.style.display = (textbox.style.display === 'block') ? 'none' : 'block'; //show textbox 
-			
-			// get close button
-			let closeButton = document.getElementById("cl-"+annotationID);
-			closeButton.addEventListener('click', function() {
-				textbox.style.display = 'none';
-			});
+		console.log('annotation clicked!');
+		hotspot.classList.add('-visited');
+		let annotationID = hotspot.getAttribute("slot"); // equals to hotspot-1
+		//console.log(annotationID);
+		
+		let id = annotationID.split('-');   // only get number
+		annotationID = id[1];
+		showTextBox(annotationID);
+	});
+}
+
+function getNavID(dot){
+	dot.addEventListener('click', function() {
+		
+		console.log('nav clicked!');
+		dot.classList.add('-visited');
+		let annotationID = dot.getAttribute("id"); // equals to nav-1
+		//console.log(annotationID);
+		
+		let id = annotationID.split('-');   // only get number
+		annotationID = id[1];
+		showTextBox(annotationID);
+	});
+}
+
+	
+document.querySelectorAll(".Hotspot").forEach(function(hotspot) {
+	getHotspotID(hotspot);
+});
+
+document.querySelectorAll(".navigation-point").forEach(function(point){
+	getNavID(point);
+});
+
+// needs altering with closing logic bc rn two or more boxes can show up
+function showTextBox(id){
+	let textbox = document.getElementById("textbox-"+id);
+	textbox.style.display = (textbox.style.display === 'block') ? 'none' : 'block'; 
+	// close 
+	let closeButton = document.getElementById("cl-"+id);
+	closeButton.addEventListener('click', function() {
+	textbox.style.display = 'none';
+	});
+}
 
 
-		});
-	}); 
-//}
-
-// check if annotation is clicked
 
 
 
