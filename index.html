@@ -10,45 +10,37 @@
         <title>3D model of Basílica de la Sagrada Familía</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <!--<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
     	<link href="https://getbootstrap.com/docs/5.2/assets/css/docs.css" rel="stylesheet">
-		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>-->
 		<link rel="stylesheet" href="style.css">
 		<script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
     </head>
-    <body style="padding-bottom: 150px" data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="0">
+    <body style="padding-bottom: 150px" data-bs-spy="scroll" data-bs-offset="0">
         <!--[if lt IE 7]>
         <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-        <div class="wrapper">
-            <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
-                <div class="row">
-                    <div class="col">
-                        <div class="container-fluid navbar-text text-nowrap text-white">
-                            <p class="h4">3D model of Basílica de la Sagrada Familía</p>
-                        </div>
-                    </div>
-                    
-                </div>
-            </nav>
+   
+                            <h4>3D model of Basílica de la Sagrada Familía</h4>
+                      
 
-            <div id="content" class="container-fluid">
-                <div class="bg-light shadow m-lg-5 m-sm-3 p-3 rounded-4 border">
+            <!---<div id="content" class="container-fluid">-->
+                
                                   
-                <div class="bg-light shadow m-lg-5 m-sm-3 p-3 rounded-4 border">
-                    <h1 class="text-center text-uppercase anchor" id="section3">Take a closer look at the Basílica de la Sagrada Família</h1>
+               
+                    <h1>Take a closer look at the Basílica de la Sagrada Família</h1>
                     
-                    <p>The work on this 3D model is still under constant revision. We're open for feedback! Just write us an <a target="_blank" title="Öffnet Mailprogramm zum Schreiben einer Mail an die angegebe Adresse" href="mailto:dev-cris.os@outlook.com">email</a>.</p>
+                    
                     <div class="container-fluid mt-2">
                         <fieldset>
-                            <legend class="h4 d-flex align-items-center gap-1">
+                            <legend class="functionalities">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-sliders2" viewBox="0 0 16 16">
                                     <path fill-rule="evenodd" d="M10.5 1a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-1 0V4H1.5a.5.5 0 0 1 0-1H10V1.5a.5.5 0 0 1 .5-.5ZM12 3.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5Zm-6.5 2A.5.5 0 0 1 6 6v1.5h8.5a.5.5 0 0 1 0 1H6V10a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5ZM1 8a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2A.5.5 0 0 1 1 8Zm9.5 2a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-1 0V13H1.5a.5.5 0 0 1 0-1H10v-1.5a.5.5 0 0 1 .5-.5Zm1.5 2.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5Z" />
                                 </svg>
                                 Options
                             </legend>
-                            <button class="btn btn-primary mb-2" data-bs-toggle="collapse" data-bs-target="#options-row">&#9660; Open / &#9650; Close</button>
+                            <button class="button-dark" data-bs-toggle="collapse" data-bs-target="#options-row">&#9660; Open / &#9650; Close</button>
                             <div id="options-row" class="row gx-3 gy-3 collapse gap-3">
                                 <div class="col-auto shadow-sm rounded border p-2">
                                     <label for="model-size" class="form-label d-flex align-items-center gap-1">
@@ -107,6 +99,10 @@
                                         </div>
                                     </template>
                                 </div>
+                                <div class="col-auto shadow-sm rounded border p-2">
+                                    <input type="checkbox" class="form-check-input" name="show-annotations" id="show-annotations" onchange="setShowAnnotations();" checked>
+                                    <label for="show-annotations" class="form-label">show annotations</label>
+                                </div>
                                 <div class="col-auto shadow-sm rounded border p-2" id="variant-chooser">
                                     Selection of variations
                                     <template id="variant-select">
@@ -116,10 +112,7 @@
                                         </div>
                                     </template>
                                 </div>
-                                <div class="col-auto shadow-sm rounded border p-2">
-                                    <input type="checkbox" class="form-check-input" name="show-annotations" id="show-annotations" onchange="setShowAnnotations();" checked>
-                                    <label for="show-annotations" class="form-label">show annotations</label>
-                                </div>
+
 
                             </div>
                         </fieldset>
@@ -132,7 +125,7 @@
                             </svg>
                             Controls
                         </p>
-                        <button class="btn btn-primary mb-2" data-bs-toggle="collapse" data-bs-target="#controls-table">&#9660; Open / &#9650; Close</button>
+                        <button class="button-dark" data-bs-toggle="collapse" data-bs-target="#controls-table">&#9660; Open / &#9650; Close</button>
                         <div id="controls-table" class="table-responsive collapse">
                             <table class="table table-bordered">
                                 <thead>
@@ -166,14 +159,21 @@
                             </table>
                         </div>
                     </div>
-                    <div class="container" id="model-container">
+                    <br>
+                    <br>
+                    <div class="container1" id="model-container">
+                         <!-- adding the navigation bar and dots here in this container -->
                         <div class="navigation-aid">
-                            <div class="navigation-point"></div>
-                            <div class="navigation-point"></div>
-                            <div class="navigation-point"></div>
+                            <div class="navigation-point" id="nav-1"></div>
+                            <div class="navigation-point" id="nav-2"></div>
+                            <div class="navigation-point" id="nav-3"></div>
+                            <div class="navigation-point" id="nav-4"></div>
+                            <div class="navigation-point" id="nav-5"></div>
+                            <div class="navigation-point" id="nav-6"></div>
+                            <div class="navigation-point" id="nav-7"></div>
                         </div>
                         <model-viewer id="Basílica-de-la-Sagrada-Familía"
-                                      class="mx-auto d-block mb-5"
+                                      class="model-box"
                                       camera-orbit="0 0 60%"
                                       min-camera-orbit="-Inf Inf auto"
                                       max-camera-orbit="-Inf Inf auto"
@@ -188,10 +188,10 @@
                                       auto-rotate-delay="0"
                                       interaction-prompt-style="basic"
                                       alt="A 3D model of the Basílica de la Sagrada Familía.">
-                              <!-- adding the navigation bar and dots here in this container -->
+                             
                         
                             <div id="lazy-load-poster" slot="poster"></div>
-                            <button id="button-load" slot="poster" type="button" class="btn btn-primary">Load 3D model</button>
+                            <button id="button-load" slot="poster" type="button" class="button-dark">Load 3D model</button>
                             <button class="Hotspot" slot="hotspot-1" data-surface="0 0 27937 27944 27943 0.239 0.118 0.644" data-visibility-attribute="visible">
 								<!--<div class="HotspotAnnotaoction">Nativity Façade</div>-->
 							</button>
@@ -205,19 +205,20 @@
                             <svg id="dimLines" xmlns="http://www.w3.org/2000/svg">
                                 <!-- currently static, needs to be dynamic-->
                                 <line x1="100" y1="100" x2="400" y2="200" stroke-dasharray="4" style="stroke:#223581;stroke-width:2" />
-                              
-                              </svg>
-                              
+                              </svg>   
 					</div>
-                    <button id="button-focus" type="button" class="btn btn-primary" onclick="window.location.href = '#Basílica-de-la-Sagrada-Familía';">focus 3D model </button>
-                    <h4>Description of model</h4>
-                    <div class="container-fluid">
-						<p>add description here</p>
+                    <div class="textbox">
+
                     </div>
-                </div>
+                    <br>
+                    <!-- we might not need this button rn as we try to implement focus into the annotations anyway
+                    <button id="button-focus" type="button" class="button-dark" onclick="window.location.href = '#Basílica-de-la-Sagrada-Familía';">focus 3D model </button>
+                    -->
+                  
+                
                 
              
-            </div>
+            
         </div>
         <script src="model_options.js" async defer></script>
     </body>

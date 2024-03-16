@@ -14,7 +14,7 @@ switchModelExample();
 zoomModel();
 setRotateSpeedOfModel();
 setOrbitSensitivityForModel();
-showDimensionLines();
+//showDimensionLines();
 
 // all functions are written here, most are for setting the model up (zoom, annotations, size, etc.)
 function initModelSelector(){
@@ -163,11 +163,12 @@ async function reloadModel(){
 }
 // here is the code for the dimension lines 
 // this code currently doesn't work but it is also not interfering with anything so 
+/*
 function showDimensionLines() {
 	var model_element = document.getElementById("model-container");
 	
 
-	modelViewer.addEventListener('loaded', () => {
+	model_element.addEventListener('loaded', () => {
 		const dimLines = modelViewer.querySelectorAll('line.dimensionLine');
 		
 		// dimLines.setAttribute('x1', 'newX1');
@@ -205,8 +206,10 @@ function showDimensionLines() {
 	
 	// Call renderSVG function
 	renderSVG();
-}
+} */
 // add functionality to annotations
+// to be added yet: textbox popup, line to textbox, saving the color class (?)
+
 document.querySelectorAll("button").forEach(function(hotspot) {
 	console.log("annotations selected");
 	hotspot.addEventListener('click', function() {
@@ -214,7 +217,7 @@ document.querySelectorAll("button").forEach(function(hotspot) {
 		console.log('annotation clicked!');
 		hotspot.classList.add('Hotspot-visited');
 	  });
-});
+}); 
 
 
 // dismiss poster once model is loaded 
