@@ -1,3 +1,8 @@
+body {
+    padding-top: 250px;
+	color: black;
+}
+
 .slider{
     width: 100%;
 	outline: #223581;
@@ -39,10 +44,7 @@
 	z-index: 201;
 }
 
-body {
-    padding-top: 250px;
-	color: black;
-}
+
 @media (min-width: 576px) {
     body {
         padding-top: 150px;
@@ -66,19 +68,64 @@ body {
 	grid-template-columns: 1fr 3fr 2fr;
 	grid-template-rows: 500px;
 	grid-template-areas:
-	"navigation-aid model-box textbox";
-	
+	"navigation-aid model-box textbox-area";
 }
 
-
+/*elements of the grid */
 .model-box {
 	grid-area: model-box;
 }
+.textbox-area {
+	grid-area: textbox-area;
+}
 .textbox {
-	grid-area: textbox;
+	display: none;
+	border-radius: 20%;
+	background-color: #223581;
+	height: 95%;
+	width: 95%;
 }
 
+.close {
+	background-color: #ffffff; 
+	border: none; 
+	border-radius: 50%; 
+	width: 30px; 
+	height: 30px; 
+	cursor: pointer; 
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-left: 80%;
+	
+  }
+  
+  .cross {
+	color: #223581; 
+	font-size: 20px;
+  }
+  
 
+/* navigation side line */
+.navigation-aid {
+	grid-area: navigation-aid;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	border-right: 6px solid #223581;
+	margin-right: 35%;
+}
+
+.navigation-point {
+	height: 25px;
+	width: 25px;
+	background-color: #70CBFF;
+	border-radius: 50%;
+	align-self: flex-end;
+	margin-right: -15%;
+}
+
+/* annotations inside model viewer */
 .Hotspot {
 	background: #70CBFF;
 	border-radius: 32px;
@@ -102,33 +149,7 @@ body {
 	opacity: var(--max-hotspot-opacity, 1);
 	transition: opacity 0.3s;
 }
-/* currently used for Options text, might need to expand that or might not need it at all 
-.functionalities {
-	display: flex;
-	align-items: center;
-}*/
-
-/* also currently not used bc was causing problems even within bs grid system but basically copies box style */
-.functionality-box {
-	border-radius: 0.25rem; 
-	border: 1px solid rgba(0, 0, 0, 0.125); 
-	padding: 0.5rem;
-
-}
-.button-dark {
-        background-color: #000;
-        color: #fff;
-        border-radius: 8px; 
-        border: none;
-        padding-top: 10px;
-        padding-bottom: 10px;
-        padding-left: 20px;
-        padding-right: 20px;
-        cursor: pointer;
-        font-size: 1rem; 
-        width: fit-content; /* button width adjusts to the text */
-        height: fit-content;
-}
+/* currently not in use */
 .HotspotAnnotation {
 	background: #fff;
 	border-radius: 4px;
@@ -159,6 +180,34 @@ body {
 	width: 100%;
 	height: 100%;
   }
+/* currently used for Options text, might need to expand that or might not need it at all 
+.functionalities {
+	display: flex;
+	align-items: center;
+}*/
+
+/* also currently not used bc was causing problems even within bs grid system but basically copies box style */
+.functionality-box {
+	border-radius: 0.25rem; 
+	border: 1px solid rgba(0, 0, 0, 0.125); 
+	padding: 0.5rem;
+
+}
+.button-dark {
+        background-color: #000;
+        color: #fff;
+        border-radius: 8px; 
+        border: none;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left: 20px;
+        padding-right: 20px;
+        cursor: pointer;
+        font-size: 1rem; 
+        width: fit-content; /* button width adjusts to the text */
+        height: fit-content;
+}
+
 .dot {
 	display:none;
 }
@@ -166,22 +215,4 @@ body {
 
 model-viewer:focus{
 	outline: 4px solid #9ec5fe;
-}
-/* navigation side line */
-.navigation-aid {
-	grid-area: navigation-aid;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	border-right: 6px solid #223581;
-	margin-right: 35%;
-}
-
-.navigation-point {
-	height: 25px;
-	width: 25px;
-	background-color: #70CBFF;
-	border-radius: 50%;
-	align-self: flex-end;
-	margin-right: -15%;
 }

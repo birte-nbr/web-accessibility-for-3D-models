@@ -208,16 +208,36 @@ function showDimensionLines() {
 	renderSVG();
 } */
 // add functionality to annotations
-// to be added yet: textbox popup, line to textbox, saving the color class (?)
+// to be added yet: line to textbox (maybe), connection to sidebar is missing 
+// can be written more effiently for sure! maybe put this all in a function as well
+//function showTextBox(){
+	document.querySelectorAll(".Hotspot").forEach(function(hotspot) {
+		hotspot.addEventListener('click', function() {
+		
+			console.log('annotation clicked!');
+			hotspot.classList.add('-visited');
+			let annotationID = hotspot.getAttribute("slot"); // equals to hotspot-1
+			console.log(annotationID);
+			//var showTextBox = true;   
+			let id = annotationID.split('-');   // only get number
+			annotationID = id[1];
+			let textbox = document.getElementById("textbox-"+annotationID);
+			textbox.style.display = (textbox.style.display === 'block') ? 'none' : 'block'; //show textbox 
+			
+			// get close button
+			let closeButton = document.getElementById("cl-"+annotationID);
+			closeButton.addEventListener('click', function() {
+				textbox.style.display = 'none';
+			});
 
-document.querySelectorAll("button").forEach(function(hotspot) {
-	console.log("annotations selected");
-	hotspot.addEventListener('click', function() {
-	
-		console.log('annotation clicked!');
-		hotspot.classList.add('Hotspot-visited');
-	  });
-}); 
+
+		});
+	}); 
+//}
+
+// check if annotation is clicked
+
+
 
 
 // dismiss poster once model is loaded 
