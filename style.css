@@ -99,11 +99,34 @@ body {
 	margin-left: 80%;
 	
   }
+
+  .forward, .back {
+	position: absolute;
+	margin-top: 30%;
+	width: 30px;
+	height: 30px;
+	background-color: #ffffff; 
+	border: none; 
+	border-radius: 50%; 
+	cursor: pointer; 
+	display: flex;
+	justify-content: center;
+	align-items: center;
+  }
+
+#next {
+	margin-left:  265px;
+}
+
+#last {
+	margin-left: 20px;
+}
   
-  .cross {
+  .cross, .arrow{
 	color: #223581; 
 	font-size: 20px;
   }
+
   
 
 /* navigation side line */

@@ -209,10 +209,11 @@ function showDimensionLines() {
 	renderSVG();
 } */
 // add functionality to annotations
-// to be added yet: line to textbox (maybe), connection to sidebar is missing 
-// can be written more effiently for sure! maybe put this all in a function as well
-//function showTextBox(){
 
+// to be added yet: line to textbox (maybe)
+
+//function showTextBox(){
+let textboxVisible = false;
 // retrieves the id from clicked dot
 function getHotspotID(hotspot){
 	hotspot.addEventListener('click', function() {
@@ -225,6 +226,7 @@ function getHotspotID(hotspot){
 		let id = annotationID.split('-');   // only get number
 		annotationID = id[1];
 		showTextBox(annotationID);
+		closeTextBox(annotationID);
 	});
 }
 
@@ -238,10 +240,85 @@ function getNavID(dot){
 		
 		let id = annotationID.split('-');   // only get number
 		annotationID = id[1];
+		// textboxVisible = true; // set it here before going into the function?
 		showTextBox(annotationID);
+		closeTextBox(annotationID);
 	});
 }
 
+// needs altering with closing logic bc rn two or more boxes can show up
+function showTextBox(id){
+	//textboxVisible = true;
+	let textbox = document.getElementById("textbox-"+id);
+	textbox.style.display = (textbox.style.display === 'block') ? 'none' : 'block'; 
+}
+
+function closeTextBox(id){
+	let textbox = document.getElementById("textbox-"+id);
+	let closeButton = document.getElementById("cl-"+id);
+	closeButton.addEventListener('click', function() {
+	textbox.style.display = 'none';
+	});
+}
+
+
+// switch between text boxes 
+// forward
+
+function skipForward(arrow) {
+	arrow.addEventListener('click', function(){
+		//console.log("clicked next");
+		let textboxID = arrow.parentNode.getAttribute("id");
+		
+		let new_id = textboxID.split('-');
+		
+		textboxID = new_id[1];  // just the number
+		closeTextBox(textboxID);  // does not work yet
+		textboxID = parseInt(textboxID); // need to convert to int to go to the next
+		let newTextboxID = textboxID + 1; // new textbox 
+		console.log(newTextboxID);
+		newTextboxID = String(newTextboxID);  
+		showTextBox(newTextboxID); // that works 
+	});
+}
+// same functionality for the left arrow
+
+function skipBackward(arrow) {
+	arrow.addEventListener('click', function(){
+		//console.log("clicked next");
+		let textboxID = arrow.parentNode.getAttribute("id");
+		
+		let new_id = textboxID.split('-');
+		
+		textboxID = new_id[1];  // just the number
+		closeTextBox(textboxID);  // does not work yet
+		textboxID = parseInt(textboxID); // need to convert to int to go to the next
+		let newTextboxID = textboxID - 1; // new textbox 
+		console.log(newTextboxID);
+		newTextboxID = String(newTextboxID);  
+		showTextBox(newTextboxID); // that works 
+	});
+}
+
+
+
+// button functionalities
+
+// skip forward
+	
+document.querySelectorAll("#next").forEach(function(arrow){
+	skipForward(arrow);
+	
+});
+
+// skip backward
+
+document.querySelectorAll("#last").forEach(function(arrow){
+	skipBackward(arrow);
+	
+});
+
+// annotations 
 	
 document.querySelectorAll(".Hotspot").forEach(function(hotspot) {
 	getHotspotID(hotspot);
@@ -250,21 +327,6 @@ document.querySelectorAll(".Hotspot").forEach(function(hotspot) {
 document.querySelectorAll(".navigation-point").forEach(function(point){
 	getNavID(point);
 });
-
-// needs altering with closing logic bc rn two or more boxes can show up
-function showTextBox(id){
-	let textbox = document.getElementById("textbox-"+id);
-	textbox.style.display = (textbox.style.display === 'block') ? 'none' : 'block'; 
-	// close 
-	let closeButton = document.getElementById("cl-"+id);
-	closeButton.addEventListener('click', function() {
-	textbox.style.display = 'none';
-	});
-}
-
-
-
-
 
 
 // dismiss poster once model is loaded 
