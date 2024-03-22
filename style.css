@@ -48,17 +48,28 @@ body {
     font-size: 1rem;
 }
 
+/* change color of bootstrap sliders */
+.slider::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	appearance: none;
+	width: 20px;
+	height: 20px;
+	background-color: #223581; /* Change this to your desired color */
+	cursor: pointer;
+	opacity: 1;
+  }
 
-.slider{
-    width: 100%;
-	outline: #223581;
-	
-}
-/* not sure what this does lol */
-.slider:focus-visible {
-	outline: 4px solid #223581;
+  .slider::webkit-slider-thumb:active {
+	background-color: #223581;
+  }
 
+  /*same for checkboxes */
+  
+.form-check-input:checked {
+    background-color: #223581;
+    border-color: #223581;
 }
+
 
 .anchor {
     padding-top: 250px;
