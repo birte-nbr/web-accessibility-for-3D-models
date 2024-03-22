@@ -4,254 +4,295 @@
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>3D model of Basílica de la Sagrada Familía</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!--<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>3D model of Basílica de la Sagrada Familía</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
     	<link href="https://getbootstrap.com/docs/5.2/assets/css/docs.css" rel="stylesheet">
-		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>-->
-		<link rel="stylesheet" href="style.css">
-		<script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
-    </head>
-    <body style="padding-bottom: 150px" data-bs-spy="scroll" data-bs-offset="0">
-        <!--[if lt IE 7]>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+</head>
+
+<!--<body style="padding-bottom: 150px" data-bs-spy="scroll" data-bs-offset="0">-->
+
+<body>
+    <!--[if lt IE 7]>
         <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-   
-                            <h4>3D model of Basílica de la Sagrada Familía</h4>
-                      
 
-            <!---<div id="content" class="container-fluid">-->
-                
-                                  
-               
-                    <h1>Take a closer look at the Basílica de la Sagrada Família</h1>
-                    
-                    
-                    <div class="container-fluid mt-2">
-                        <fieldset>
-                            <legend class="functionalities">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-sliders2" viewBox="0 0 16 16">
-                                    <path fill-rule="evenodd" d="M10.5 1a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-1 0V4H1.5a.5.5 0 0 1 0-1H10V1.5a.5.5 0 0 1 .5-.5ZM12 3.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5Zm-6.5 2A.5.5 0 0 1 6 6v1.5h8.5a.5.5 0 0 1 0 1H6V10a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5ZM1 8a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2A.5.5 0 0 1 1 8Zm9.5 2a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-1 0V13H1.5a.5.5 0 0 1 0-1H10v-1.5a.5.5 0 0 1 .5-.5Zm1.5 2.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5Z" />
-                                </svg>
-                                Options
-                            </legend>
-                            <button class="button-dark" data-bs-toggle="collapse" data-bs-target="#options-row">&#9660; Open / &#9650; Close</button>
-                            <div id="options-row" class="row gx-3 gy-3 collapse gap-3">
-                                <div class="col-auto shadow-sm rounded border p-2">
-                                    <label for="model-size" class="form-label d-flex align-items-center gap-1">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrows-angle-expand" viewBox="0 0 16 16">
-                                            <path fill-rule="evenodd" d="M5.828 10.172a.5.5 0 0 0-.707 0l-4.096 4.096V11.5a.5.5 0 0 0-1 0v3.975a.5.5 0 0 0 .5.5H4.5a.5.5 0 0 0 0-1H1.732l4.096-4.096a.5.5 0 0 0 0-.707zm4.344-4.344a.5.5 0 0 0 .707 0l4.096-4.096V4.5a.5.5 0 1 0 1 0V.525a.5.5 0 0 0-.5-.5H11.5a.5.5 0 0 0 0 1h2.768l-4.096 4.096a.5.5 0 0 0 0 .707z" />
-                                        </svg>
-                                        Size of model section
-                                    </label>
-                                    <input type="range" class="slider form-range" step="25" id="model-size" name="model-size" onchange="resizeModel();" min="100" max="1000" value="500">
-                                </div>
-                                <div class="col-auto shadow-sm rounded border p-2">
-                                    <label for="model-zoom" class="form-label d-flex align-items-center gap-1">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-zoom-in" viewBox="0 0 16 16">
-                                            <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z" />
-                                            <path d="M10.344 11.742c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1 6.538 6.538 0 0 1-1.398 1.4z" />
-                                            <path fill-rule="evenodd" d="M6.5 3a.5.5 0 0 1 .5.5V6h2.5a.5.5 0 0 1 0 1H7v2.5a.5.5 0 0 1-1 0V7H3.5a.5.5 0 0 1 0-1H6V3.5a.5.5 0 0 1 .5-.5z" />
-                                        </svg>
-                                        Zoom
-                                    </label>
-                                    <input type="range" class="slider form-range" id="model-zoom" name="model-zoom" onchange="zoomModel();" min="0" max="200" value="60">
-                                </div>
-                                <div class="col-auto shadow-sm rounded border p-2">
-                                    <label for="model-orbit-sensitivity" class="form-label d-flex align-items-center gap-1">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-controller" viewBox="0 0 16 16">
-                                            <path d="M11.5 6.027a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm-1.5 1.5a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1zm2.5-.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm-1.5 1.5a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1zm-6.5-3h1v1h1v1h-1v1h-1v-1h-1v-1h1v-1z" />
-                                            <path d="M3.051 3.26a.5.5 0 0 1 .354-.613l1.932-.518a.5.5 0 0 1 .62.39c.655-.079 1.35-.117 2.043-.117.72 0 1.443.041 2.12.126a.5.5 0 0 1 .622-.399l1.932.518a.5.5 0 0 1 .306.729c.14.09.266.19.373.297.408.408.78 1.05 1.095 1.772.32.733.599 1.591.805 2.466.206.875.34 1.78.364 2.606.024.816-.059 1.602-.328 2.21a1.42 1.42 0 0 1-1.445.83c-.636-.067-1.115-.394-1.513-.773-.245-.232-.496-.526-.739-.808-.126-.148-.25-.292-.368-.423-.728-.804-1.597-1.527-3.224-1.527-1.627 0-2.496.723-3.224 1.527-.119.131-.242.275-.368.423-.243.282-.494.575-.739.808-.398.38-.877.706-1.513.773a1.42 1.42 0 0 1-1.445-.83c-.27-.608-.352-1.395-.329-2.21.024-.826.16-1.73.365-2.606.206-.875.486-1.733.805-2.466.315-.722.687-1.364 1.094-1.772a2.34 2.34 0 0 1 .433-.335.504.504 0 0 1-.028-.079zm2.036.412c-.877.185-1.469.443-1.733.708-.276.276-.587.783-.885 1.465a13.748 13.748 0 0 0-.748 2.295 12.351 12.351 0 0 0-.339 2.406c-.022.755.062 1.368.243 1.776a.42.42 0 0 0 .426.24c.327-.034.61-.199.929-.502.212-.202.4-.423.615-.674.133-.156.276-.323.44-.504C4.861 9.969 5.978 9.027 8 9.027s3.139.942 3.965 1.855c.164.181.307.348.44.504.214.251.403.472.615.674.318.303.601.468.929.503a.42.42 0 0 0 .426-.241c.18-.408.265-1.02.243-1.776a12.354 12.354 0 0 0-.339-2.406 13.753 13.753 0 0 0-.748-2.295c-.298-.682-.61-1.19-.885-1.465-.264-.265-.856-.523-1.733-.708-.85-.179-1.877-.27-2.913-.27-1.036 0-2.063.091-2.913.27z" />
-                                        </svg>
-                                        Sensitivity of controls
-                                    </label>
-                                    <input type="range" class="slider form-range" id="model-orbit-sensitivity" name="model-orbit-sensitivity" onchange="setOrbitSensitivityForModel();" min="0" max="3" step="0.01" value="1">
-                                </div>
-                                <div class="col-auto shadow-sm rounded border p-2">
-                                    <input class="form-check-input" type="checkbox" id="auto-rotate" name="auto-rotate" value="on"  checked onchange="setAutoRotateModel();">
-                                    <label for="model-size" class="form-label gap-1">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-clockwise" viewBox="0 0 16 16">
-                                            <path fill-rule="evenodd" d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2v1z" />
-                                            <path d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466z" />
-                                        </svg>
-                                        Auto-rotation
-                                    </label>
-                                    <label for="model-rotate-speed" class="form-label d-flex align-items-center gap-1">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-speedometer2" viewBox="0 0 16 16">
-                                            <path d="M8 4a.5.5 0 0 1 .5.5V6a.5.5 0 0 1-1 0V4.5A.5.5 0 0 1 8 4zM3.732 5.732a.5.5 0 0 1 .707 0l.915.914a.5.5 0 1 1-.708.708l-.914-.915a.5.5 0 0 1 0-.707zM2 10a.5.5 0 0 1 .5-.5h1.586a.5.5 0 0 1 0 1H2.5A.5.5 0 0 1 2 10zm9.5 0a.5.5 0 0 1 .5-.5h1.5a.5.5 0 0 1 0 1H12a.5.5 0 0 1-.5-.5zm.754-4.246a.389.389 0 0 0-.527-.02L7.547 9.31a.91.91 0 1 0 1.302 1.258l3.434-4.297a.389.389 0 0 0-.029-.518z" />
-                                            <path fill-rule="evenodd" d="M0 10a8 8 0 1 1 15.547 2.661c-.442 1.253-1.845 1.602-2.932 1.25C11.309 13.488 9.475 13 8 13c-1.474 0-3.31.488-4.615.911-1.087.352-2.49.003-2.932-1.25A7.988 7.988 0 0 1 0 10zm8-7a7 7 0 0 0-6.603 9.329c.203.575.923.876 1.68.63C4.397 12.533 6.358 12 8 12s3.604.532 4.923.96c.757.245 1.477-.056 1.68-.631A7 7 0 0 0 8 3z" />
-                                        </svg>
-                                        speed of auto-rotation
-                                    </label>
-                                    <input type="range" class="slider form-range" id="model-rotate-speed" name="model-rotate-speed" onchange="setRotateSpeedOfModel();" min="-1000" max="1000" value="100">
-                                </div>
-                                <div class="col-auto shadow-sm rounded border p-2" id="model-chooser">
-                                    Selection of model
-                                    <template id="model-select">
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="radio" id="model1" name="switch-model" value="Erhöhter Kontrast" checked onchange="switchModelExample();">
-                                            <label for="model1" class="form-label"></label>
-                                        </div>
-                                    </template>
-                                </div>
-                                <div class="col-auto shadow-sm rounded border p-2">
-                                    <input type="checkbox" class="form-check-input" name="show-annotations" id="show-annotations" onchange="setShowAnnotations();" checked>
-                                    <label for="show-annotations" class="form-label">show annotations</label>
-                                </div>
-                                <div class="col-auto shadow-sm rounded border p-2" id="variant-chooser">
-                                    Selection of variations
-                                    <template id="variant-select">
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="radio" id="model1" name="switch-variant" value="Erhöhter Kontrast" onchange="switchVariantExample();">
-                                            <label for="model1" class="form-label"></label>
-                                        </div>
-                                    </template>
-                                </div>
+    <h4>3D model of Basílica de la Sagrada Familía</h4>
 
 
-                            </div>
-                        </fieldset>
-                    </div>
-                    <div class="container-sm float-start mt-2">
-                        <p class="h4 d-flex align-items-center gap-1">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-question-circle" viewBox="0 0 16 16">
-                                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
-                                <path d="M5.255 5.786a.237.237 0 0 0 .241.247h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286zm1.557 5.763c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94z" />
-                            </svg>
-                            Controls
-                        </p>
-                        <button class="button-dark" data-bs-toggle="collapse" data-bs-target="#controls-table">&#9660; Open / &#9650; Close</button>
-                        <div id="controls-table" class="table-responsive collapse">
-                            <table class="table table-bordered">
-                                <thead>
-                                    <tr>
-                                        <th>Action</th>
-                                        <th>Keys</th>
-                                        <th>Mouse</th>
-                                        <th>Touch</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>Rotate</td>
-                                        <td><kbd>&leftarrow;</kbd> <kbd>&rightarrow;</kbd> <kbd>&uparrow;</kbd> <kbd>&downarrow;</kbd></td>
-                                        <td><kbd>Left mouse click</kbd> hold and drag</td>
-                                        <td>drag with one finger</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Move</td>
-                                        <td><kbd>Shift</kbd> + <kbd>&leftarrow;</kbd> <kbd>&rightarrow;</kbd> <kbd>&uparrow;</kbd> <kbd>&downarrow;</kbd></td>
-                                        <td><kbd>Right mouse click</kbd> hold and drag</td>
-                                        <td>drag with two fingers</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Zoom</td>
-                                        <td><kbd>Image &uparrow;</kbd> <kbd>Image &downarrow;</kbd></td>
-                                        <td><kbd>scroll wheel</kbd></td>
-                                        <td>drag two fingers apart or together</td>
-                                    </tr>
-                                </tbody>
-                            </table>
+    <!---<div id="content" class="container-fluid">-->
+
+
+
+    <h1>Take a closer look at the Basílica de la Sagrada Família</h1>
+
+<div class="container-menus">
+    <div class="options-container">
+        <fieldset>
+            <legend class="functionalities">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                    class="bi bi-sliders2" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                        d="M10.5 1a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-1 0V4H1.5a.5.5 0 0 1 0-1H10V1.5a.5.5 0 0 1 .5-.5ZM12 3.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5Zm-6.5 2A.5.5 0 0 1 6 6v1.5h8.5a.5.5 0 0 1 0 1H6V10a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5ZM1 8a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2A.5.5 0 0 1 1 8Zm9.5 2a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-1 0V13H1.5a.5.5 0 0 1 0-1H10v-1.5a.5.5 0 0 1 .5-.5Zm1.5 2.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5Z" />
+                </svg>
+                Options
+            </legend>
+            <button class="button-dark" data-bs-toggle="collapse" data-bs-target="#options-row">&#9660; Open / &#9650;
+                Close</button>
+            <div id="options-row" class="row gx-3 gy-3 collapse gap-3">
+                <div class="col-auto shadow-sm rounded border p-2">
+                    <label for="model-size" class="form-label d-flex align-items-center gap-1">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-arrows-angle-expand" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd"
+                                d="M5.828 10.172a.5.5 0 0 0-.707 0l-4.096 4.096V11.5a.5.5 0 0 0-1 0v3.975a.5.5 0 0 0 .5.5H4.5a.5.5 0 0 0 0-1H1.732l4.096-4.096a.5.5 0 0 0 0-.707zm4.344-4.344a.5.5 0 0 0 .707 0l4.096-4.096V4.5a.5.5 0 1 0 1 0V.525a.5.5 0 0 0-.5-.5H11.5a.5.5 0 0 0 0 1h2.768l-4.096 4.096a.5.5 0 0 0 0 .707z" />
+                        </svg>
+                        Size of model section
+                    </label>
+                    <input type="range" class="slider form-range" step="25" id="model-size" name="model-size"
+                        onchange="resizeModel();" min="100" max="1000" value="500">
+                </div>
+                <div class="col-auto shadow-sm rounded border p-2">
+                    <label for="model-zoom" class="form-label d-flex align-items-center gap-1">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-zoom-in" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd"
+                                d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z" />
+                            <path
+                                d="M10.344 11.742c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1 6.538 6.538 0 0 1-1.398 1.4z" />
+                            <path fill-rule="evenodd"
+                                d="M6.5 3a.5.5 0 0 1 .5.5V6h2.5a.5.5 0 0 1 0 1H7v2.5a.5.5 0 0 1-1 0V7H3.5a.5.5 0 0 1 0-1H6V3.5a.5.5 0 0 1 .5-.5z" />
+                        </svg>
+                        Zoom
+                    </label>
+                    <input type="range" class="slider form-range" id="model-zoom" name="model-zoom"
+                        onchange="zoomModel();" min="0" max="200" value="60">
+                </div>
+                <div class="col-auto shadow-sm rounded border p-2">
+                    <label for="model-orbit-sensitivity" class="form-label d-flex align-items-center gap-1">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-controller" viewBox="0 0 16 16">
+                            <path
+                                d="M11.5 6.027a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm-1.5 1.5a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1zm2.5-.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm-1.5 1.5a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1zm-6.5-3h1v1h1v1h-1v1h-1v-1h-1v-1h1v-1z" />
+                            <path
+                                d="M3.051 3.26a.5.5 0 0 1 .354-.613l1.932-.518a.5.5 0 0 1 .62.39c.655-.079 1.35-.117 2.043-.117.72 0 1.443.041 2.12.126a.5.5 0 0 1 .622-.399l1.932.518a.5.5 0 0 1 .306.729c.14.09.266.19.373.297.408.408.78 1.05 1.095 1.772.32.733.599 1.591.805 2.466.206.875.34 1.78.364 2.606.024.816-.059 1.602-.328 2.21a1.42 1.42 0 0 1-1.445.83c-.636-.067-1.115-.394-1.513-.773-.245-.232-.496-.526-.739-.808-.126-.148-.25-.292-.368-.423-.728-.804-1.597-1.527-3.224-1.527-1.627 0-2.496.723-3.224 1.527-.119.131-.242.275-.368.423-.243.282-.494.575-.739.808-.398.38-.877.706-1.513.773a1.42 1.42 0 0 1-1.445-.83c-.27-.608-.352-1.395-.329-2.21.024-.826.16-1.73.365-2.606.206-.875.486-1.733.805-2.466.315-.722.687-1.364 1.094-1.772a2.34 2.34 0 0 1 .433-.335.504.504 0 0 1-.028-.079zm2.036.412c-.877.185-1.469.443-1.733.708-.276.276-.587.783-.885 1.465a13.748 13.748 0 0 0-.748 2.295 12.351 12.351 0 0 0-.339 2.406c-.022.755.062 1.368.243 1.776a.42.42 0 0 0 .426.24c.327-.034.61-.199.929-.502.212-.202.4-.423.615-.674.133-.156.276-.323.44-.504C4.861 9.969 5.978 9.027 8 9.027s3.139.942 3.965 1.855c.164.181.307.348.44.504.214.251.403.472.615.674.318.303.601.468.929.503a.42.42 0 0 0 .426-.241c.18-.408.265-1.02.243-1.776a12.354 12.354 0 0 0-.339-2.406 13.753 13.753 0 0 0-.748-2.295c-.298-.682-.61-1.19-.885-1.465-.264-.265-.856-.523-1.733-.708-.85-.179-1.877-.27-2.913-.27-1.036 0-2.063.091-2.913.27z" />
+                        </svg>
+                        Sensitivity of controls
+                    </label>
+                    <input type="range" class="slider form-range" id="model-orbit-sensitivity"
+                        name="model-orbit-sensitivity" onchange="setOrbitSensitivityForModel();" min="0" max="3"
+                        step="0.01" value="1">
+                </div>
+                <div class="col-auto shadow-sm rounded border p-2">
+                    <input class="form-check-input" type="checkbox" id="auto-rotate" name="auto-rotate" value="on"
+                        checked onchange="setAutoRotateModel();">
+                    <label for="model-size" class="form-label gap-1">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-arrow-clockwise" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd"
+                                d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2v1z" />
+                            <path
+                                d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466z" />
+                        </svg>
+                        Auto-rotation
+                    </label>
+                    <label for="model-rotate-speed" class="form-label d-flex align-items-center gap-1">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-speedometer2" viewBox="0 0 16 16">
+                            <path
+                                d="M8 4a.5.5 0 0 1 .5.5V6a.5.5 0 0 1-1 0V4.5A.5.5 0 0 1 8 4zM3.732 5.732a.5.5 0 0 1 .707 0l.915.914a.5.5 0 1 1-.708.708l-.914-.915a.5.5 0 0 1 0-.707zM2 10a.5.5 0 0 1 .5-.5h1.586a.5.5 0 0 1 0 1H2.5A.5.5 0 0 1 2 10zm9.5 0a.5.5 0 0 1 .5-.5h1.5a.5.5 0 0 1 0 1H12a.5.5 0 0 1-.5-.5zm.754-4.246a.389.389 0 0 0-.527-.02L7.547 9.31a.91.91 0 1 0 1.302 1.258l3.434-4.297a.389.389 0 0 0-.029-.518z" />
+                            <path fill-rule="evenodd"
+                                d="M0 10a8 8 0 1 1 15.547 2.661c-.442 1.253-1.845 1.602-2.932 1.25C11.309 13.488 9.475 13 8 13c-1.474 0-3.31.488-4.615.911-1.087.352-2.49.003-2.932-1.25A7.988 7.988 0 0 1 0 10zm8-7a7 7 0 0 0-6.603 9.329c.203.575.923.876 1.68.63C4.397 12.533 6.358 12 8 12s3.604.532 4.923.96c.757.245 1.477-.056 1.68-.631A7 7 0 0 0 8 3z" />
+                        </svg>
+                        speed of auto-rotation
+                    </label>
+                    <input type="range" class="slider form-range" id="model-rotate-speed" name="model-rotate-speed"
+                        onchange="setRotateSpeedOfModel();" min="-1000" max="1000" value="100">
+                </div>
+                <div class="col-auto shadow-sm rounded border p-2" id="model-chooser">
+                    Selection of model
+                    <template id="model-select">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" id="model1" name="switch-model"
+                                value="Erhöhter Kontrast" checked onchange="switchModelExample();">
+                            <label for="model1" class="form-label"></label>
                         </div>
-                    </div>
-                    <br>
-                    <br>
-                    <div class="container1" id="model-container">
-                         <!-- adding the navigation bar and dots here in this container -->
-                        <div class="navigation-aid">
-                            <div class="navigation-point" id="nav-1"></div>
-                            <div class="navigation-point" id="nav-2"></div>
-                            <div class="navigation-point" id="nav-3"></div>
-                            <div class="navigation-point" id="nav-4"></div>
-                            <div class="navigation-point" id="nav-5"></div>
-                            <div class="navigation-point" id="nav-6"></div>
-                            <div class="navigation-point" id="nav-7"></div>
+                    </template>
+                </div>
+                <div class="col-auto shadow-sm rounded border p-2">
+                    <input type="checkbox" class="form-check-input" name="show-annotations" id="show-annotations"
+                        onchange="setShowAnnotations();" checked>
+                    <label for="show-annotations" class="form-label">show annotations</label>
+                </div>
+                <div class="col-auto shadow-sm rounded border p-2" id="variant-chooser">
+                    Selection of variations
+                    <template id="variant-select">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" id="model1" name="switch-variant"
+                                value="Erhöhter Kontrast" onchange="switchVariantExample();">
+                            <label for="model1" class="form-label"></label>
                         </div>
-                        <div class="textbox-area">
-                            <div class="textbox" id="textbox-1">
-                                <p>Textbox 1</p>
-                                <button class="close" id="cl-1"><span class="cross">&#10006;</span></button>
-                                <button class="forward" id="next"><span class="arrow">&#129130;</span></button>
-                                <button class="back" id="last"><span class="arrow">&#129128;</span></button>
-                            </div>
-                            <div class="textbox" id="textbox-2">
-                                <p>Textbox 2</p>
-                                <button class="close" id="cl-2"><span class="cross">&#10006;</span></button>
-                                <button class="forward" id="next"><span class="arrow">&#129130;</span></button>
-                                <button class="back" id="last"><span class="arrow">&#129128;</span></button>
-                            </div>
-                            <div class="textbox" id="textbox-3">
-                                <p>Textbox 3</p>
-                                <button class="close" id="cl-3"><span class="cross">&#10006;</span></button>
-                            </div>
-                            <div class="textbox" id="textbox-4">
-                                <button class="close" id="cl-4"><span class="cross">&#10006;</span></button>
-                            </div>
-                            <div class="textbox" id="textbox-5">
-                                <button class="close" id="cl-5"><span class="cross">&#10006;</span></button>
-                            </div>
-                            <div class="textbox" id="textbox-6">
-                                <button class="close" id="cl-6"><span class="cross">&#10006;</span></button>
-                            </div>
-                            <div class="textbox" id="textbox-7">
-                                <button class="close" id="cl-7"><span class="cross">&#10006;</span></button>
-                            </div>
-                        </div>
-                        <model-viewer id="Basílica-de-la-Sagrada-Familía"
-                                      class="model-box"
-                                      camera-orbit="0 0 60%"
-                                      min-camera-orbit="-Inf Inf auto"
-                                      max-camera-orbit="-Inf Inf auto"
-                                      camera-target="0m 0m 0m"
-                                      ar
-                                      ar-modes="webxr scene-viewer quick-look"
-                                      src="models/sagrada-familia.glb"
-                                      poster="models/cathedral.webp"
-                                      reveal="manual"
-                                      shadow-intensity="1"
-                                      camera-controls
-                                      auto-rotate-delay="0"
-                                      interaction-prompt-style="basic"
-                                      alt="A 3D model of the Basílica de la Sagrada Familía.">
-                             
-                        
-                            <div id="lazy-load-poster" slot="poster"></div>
-                            <button id="button-load" slot="poster" type="button" class="button-dark">Load 3D model</button>
-                            <button class="Hotspot" slot="hotspot-1" data-surface="0 0 27937 27944 27943 0.239 0.118 0.644" data-visibility-attribute="visible">
-								<!--<div class="HotspotAnnotaoction">Nativity Façade</div>-->
-							</button>
-							<button class="Hotspot" slot="hotspot-2" data-surface="0 0 20362 20364 20363 0.118 0.002 0.881" data-visibility-attribute="visible">
-								<!--<div class="HotspotAnnotation">Passion Façade</div>-->
-							</button>
-							<button class="Hotspot" slot="hotspot-3" data-surface="0 0 46636 46635 46638 0 0 1" data-visibility-attribute="visible">
-								<!--<div class="HotspotAnnotation">Glory Façade</div>-->
-							</button>
-                            <button class="Hotspot" slot="hotspot-4" data-surface="0 0 46636 46635 46638 0 0 1" data-visibility-attribute="visible">
-								<!--<div class="HotspotAnnotation">Glory Façade</div>-->
-							</button>
-                            <!-- 
-                            <svg id="dimLines" xmlns="http://www.w3.org/2000/svg">
-                                 currently static, needs to be dynamic
-                                <line x1="100" y1="100" x2="400" y2="200" stroke-dasharray="4" style="stroke:#223581;stroke-width:2" />
-                              </svg>--> 
-                           
-					</div>
-                 
-                    <br>
-                    <!-- we might not need this button rn as we try to implement focus into the annotations anyway
+                    </template>
+                </div>
+
+
+            </div>
+        </fieldset>
+    </div>
+    <div class="controls-container">
+        <p>
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                class="bi bi-question-circle" viewBox="0 0 16 16">
+                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                <path
+                    d="M5.255 5.786a.237.237 0 0 0 .241.247h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286zm1.557 5.763c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94z" />
+            </svg>
+            Controls
+        </p>
+        <button class="button-dark" data-bs-toggle="collapse" data-bs-target="#controls-table">&#9660; Open / &#9650;
+            Close</button>
+        <div id="controls-table" class="table-responsive collapse">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Action</th>
+                        <th>Keys</th>
+                        <th>Mouse</th>
+                        <th>Touch</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Rotate</td>
+                        <td><kbd>&leftarrow;</kbd> <kbd>&rightarrow;</kbd> <kbd>&uparrow;</kbd> <kbd>&downarrow;</kbd>
+                        </td>
+                        <td><kbd>Left mouse click</kbd> hold and drag</td>
+                        <td>drag with one finger</td>
+                    </tr>
+                    <tr>
+                        <td>Move</td>
+                        <td><kbd>Shift</kbd> + <kbd>&leftarrow;</kbd> <kbd>&rightarrow;</kbd> <kbd>&uparrow;</kbd>
+                            <kbd>&downarrow;</kbd>
+                        </td>
+                        <td><kbd>Right mouse click</kbd> hold and drag</td>
+                        <td>drag with two fingers</td>
+                    </tr>
+                    <tr>
+                        <td>Zoom</td>
+                        <td><kbd>Image &uparrow;</kbd> <kbd>Image &downarrow;</kbd></td>
+                        <td><kbd>scroll wheel</kbd></td>
+                        <td>drag two fingers apart or together</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+    <br>
+    <div class="container1" id="model-container">
+        <!-- adding the navigation bar and dots here in this container -->
+        <div class="navigation-aid">
+            <div class="navigation-point" id="nav-1"></div>
+            <div class="navigation-point" id="nav-2"></div>
+            <div class="navigation-point" id="nav-3"></div>
+            <div class="navigation-point" id="nav-4"></div>
+            <div class="navigation-point" id="nav-5"></div>
+            <div class="navigation-point" id="nav-6"></div>
+            <div class="navigation-point" id="nav-7"></div>
+        </div>
+        
+        <model-viewer id="Basílica-de-la-Sagrada-Familía" class="model-box" camera-orbit="180deg 0 60%"
+            min-camera-orbit="-Inf Inf auto" max-camera-orbit="-Inf Inf auto" camera-target="0 0 0" ar
+            ar-modes="webxr scene-viewer quick-look" src="models/sagrada-familia.glb" poster="models/cathedral.webp"
+            reveal="manual" shadow-intensity="1" camera-controls auto-rotate-delay="0" interaction-prompt-style="basic"
+            alt="A 3D model of the Basílica de la Sagrada Familía.">
+
+            <div class="controls" id="color-controls">
+                <button data-color="#ff0000">Red</button>
+                <button data-color="#00ff00">Green</button>
+                <button data-color="#0000ff">Blue</button>
+            </div>
+
+            <div id="lazy-load-poster" slot="poster"></div>
+            <button id="button-load" slot="poster" type="button" class="button-dark">Load 3D model</button>
+            <button class="Hotspot" slot="hotspot-1"
+                data-position="0.5122817105027573m 0.14810949555402875m -7.041559307033434m"
+                data-normal="0m 0.000793157988001149m -0.9999996854501536m"
+                data-orbit="-90.94862deg 84.56856deg 0.0793157988001149m"
+                data-target="1.122817105027573m 1.14810949555402875m -7.041559307033434m" data-zoom="25deg"
+                data-visibility-attribute="visible">
+                <div class="HotspotAnnotation">Nativity Façade</div>
+            </button>
+            <button class="Hotspot" slot="hotspot-2" data-surface="0 0 20362 20364 20363 0.118 0.002 0.881"
+                data-visibility-attribute="visible">
+                <div class="HotspotAnnotation">Passion Façade</div>
+            </button>
+            <button class="Hotspot" slot="hotspot-3" data-surface="0 0 46636 46635 46638 0 0 1"
+                data-visibility-attribute="visible">
+                <div class="HotspotAnnotation">Glory Façade</div>
+            </button>
+            <button class="Hotspot" slot="hotspot-4" data-surface="0 0 46636 46635 46638 0 0 1"
+                data-visibility-attribute="visible">
+                <div class="HotspotAnnotation">Glory Façade</div>
+            </button>
+
+
+        </model-viewer>
+        <div class="textbox-area">
+            <div class="textbox" id="textbox-1">
+                <p>Textbox 1</p>
+                <button class="close" id="cl-1"><span class="cross">&#10006;</span></button>
+                <button class="forward" id="next"><span class="arrow">&#129130;</span></button>
+                <button class="back" id="last"><span class="arrow">&#129128;</span></button>
+            </div>
+            <div class="textbox" id="textbox-2">
+                <p>Textbox 2</p>
+                <button class="close" id="cl-2"><span class="cross">&#10006;</span></button>
+                <button class="forward" id="next"><span class="arrow">&#129130;</span></button>
+                <button class="back" id="last"><span class="arrow">&#129128;</span></button>
+            </div>
+            <div class="textbox" id="textbox-3">
+                <p>Textbox 3</p>
+                <button class="close" id="cl-3"><span class="cross">&#10006;</span></button>
+            </div>
+            <div class="textbox" id="textbox-4">
+                <button class="close" id="cl-4"><span class="cross">&#10006;</span></button>
+            </div>
+            <div class="textbox" id="textbox-5">
+                <button class="close" id="cl-5"><span class="cross">&#10006;</span></button>
+            </div>
+            <div class="textbox" id="textbox-6">
+                <button class="close" id="cl-6"><span class="cross">&#10006;</span></button>
+            </div>
+            <div class="textbox" id="textbox-7">
+                <button class="close" id="cl-7"><span class="cross">&#10006;</span></button>
+            </div>
+        </div>
+
+    
+    </div>
+
+    <br>
+    <!-- we might not need this button rn as we try to implement focus into the annotations anyway
                     <button id="button-focus" type="button" class="button-dark" onclick="window.location.href = '#Basílica-de-la-Sagrada-Familía';">focus 3D model </button>
                     -->
-                  
-                
-                
-             
-            
-        </div>
-        <script src="model_options.js" async defer></script>
-    </body>
+
+
+
+
+
+    </div>
+    <script src="model_options.js" async defer></script>
+</body>
+
 </html>
