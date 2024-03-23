@@ -141,14 +141,16 @@ body {
 /* for model container */
 .container1 {
 	display: grid;
-	grid-template-columns: 1fr 3fr 1fr;
+	grid-template-columns: 1fr 3fr 2fr;
 	grid-template-rows: 500px;
 	grid-template-areas:
 	"navigation-aid model-box textbox-area";
 }
 
 /*elements of the grid */
-
+.navigation-aid {
+	grid-area: navigation-aid;
+}
 
 .model-box {
 	grid-area: model-box;
@@ -158,16 +160,18 @@ body {
 	grid-area: textbox-area;
 	grid-column: span 1;
 	display: none;
+	position: relative;
 }
 .textbox {
 	display: none;
-	border-radius: 20%;
+	border-radius: 10%;
 	background-color: #223581;
 	height: 95%;
 	width: 95%;
 }
 
 .close {
+	position: absolute;
 	background-color: #ffffff; 
 	border: none; 
 	border-radius: 50%; 
@@ -177,13 +181,17 @@ body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	margin-left: 80%;
+	right: 10%;
+	top: 2%;
 	
   }
 
   .forward, .back {
 	position: absolute;
-	margin-top: 30%;
+    top: 89%; 
+    right: 10%;
+    transform: translateY(-50%);
+	
 	width: 30px;
 	height: 30px;
 	background-color: #ffffff; 
@@ -195,39 +203,29 @@ body {
 	align-items: center;
   }
 
-#next {
-	margin-left:  265px;
+#last {
+left: 5%;
 }
 
-#last {
-	margin-left: 20px;
-}
   
   .cross, .arrow{
 	color: #223581; 
 	font-size: 20px;
   }
+*/
 
   
 
 /* navigation side line */
-.navigation-aid {
-	grid-area: navigation-aid;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	border-right: 6px solid #223581;
-	margin-right: 35%;
+
+.navigation-aid svg {
+	position: absolute;
+	left: 10%;
+}
+circle {
+	fill:#70CBFF;
 }
 
-.navigation-point {
-	height: 25px;
-	width: 25px;
-	background-color: #70CBFF;
-	border-radius: 50%;
-	align-self: flex-end;
-	margin-right: -15%;
-}
 
 /* annotations inside model viewer */
 .Hotspot {
@@ -245,6 +243,7 @@ body {
 }
 .-visited{
 	background: #223581;
+	fill: #223581;
 }
 .annotation-wrapper ::slotted(*) {
 	pointer-events: initial;

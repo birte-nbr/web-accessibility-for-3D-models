@@ -202,13 +202,19 @@
     <div class="container1" id="model-container">
         <!-- adding the navigation bar and dots here in this container -->
         <div class="navigation-aid">
-            <div class="navigation-point" id="nav-1"></div>
-            <div class="navigation-point" id="nav-2"></div>
-            <div class="navigation-point" id="nav-3"></div>
-            <div class="navigation-point" id="nav-4"></div>
-            <div class="navigation-point" id="nav-5"></div>
-            <div class="navigation-point" id="nav-6"></div>
-            <div class="navigation-point" id="nav-7"></div>
+            <svg width="30" height="500" viewBox="0 0 18 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <line x1="9" y1="0" x2="9" y2="500" stroke="#223581" stroke-width="5"/>
+               
+                <circle id= "nav-1" cx="9" cy="12" r="12"/>
+                <circle id= "nav-2"  cx="9" cy="125" r="12"/>
+                <circle id= "nav-3" cx="9" cy="200" r="12"/>
+                <circle id= "nav-4" cx="9" cy="275" r="12" />
+                <circle id= "nav-5" cx="9" cy="350" r="12"/>
+                <circle id= "nav-6" cx="9" cy="425" r="12"/>
+                <circle id= "nav-7" cx="9" cy="488" r="12"/>
+            
+              </svg>
+              
         </div>
         
         <model-viewer id="Basílica-de-la-Sagrada-Familía" class="model-box" camera-orbit="180deg 0 60%"
@@ -249,34 +255,32 @@
 
         </model-viewer>
         <div class="textbox-area">
+            <button class="forward" id="next"><span class="arrow">&#129130;</span></button>
             <div class="textbox" id="textbox-1">
                 <p>Textbox 1</p>
-                <button class="close" id="cl-1"><span class="cross">&#10006;</span></button>
-                <button class="forward" id="next"><span class="arrow">&#129130;</span></button>
-                <button class="back" id="last"><span class="arrow">&#129128;</span></button>
+                <button class="close" id="1"><span class="cross">&#10006;</span></button>
             </div>
             <div class="textbox" id="textbox-2">
                 <p>Textbox 2</p>
-                <button class="close" id="cl-2"><span class="cross">&#10006;</span></button>
-                <button class="forward" id="next"><span class="arrow">&#129130;</span></button>
-                <button class="back" id="last"><span class="arrow">&#129128;</span></button>
+                <button class="close" id="2"><span class="cross">&#10006;</span></button>
             </div>
             <div class="textbox" id="textbox-3">
                 <p>Textbox 3</p>
-                <button class="close" id="cl-3"><span class="cross">&#10006;</span></button>
+                <button class="close" id="3" onclick="closeTextBox()"><span class="cross">&#10006;</span></button>
             </div>
             <div class="textbox" id="textbox-4">
-                <button class="close" id="cl-4"><span class="cross">&#10006;</span></button>
+                <button class="close" id="4"><span class="cross">&#10006;</span></button>
             </div>
             <div class="textbox" id="textbox-5">
-                <button class="close" id="cl-5"><span class="cross">&#10006;</span></button>
+                <button class="close" id="5"><span class="cross">&#10006;</span></button>
             </div>
             <div class="textbox" id="textbox-6">
-                <button class="close" id="cl-6"><span class="cross">&#10006;</span></button>
+                <button class="close" id="6"><span class="cross">&#10006;</span></button>
             </div>
             <div class="textbox" id="textbox-7">
-                <button class="close" id="cl-7"><span class="cross">&#10006;</span></button>
+                <button class="close" id="7"><span class="cross">&#10006;</span></button>
             </div>
+            <button class="back" id="last"><span class="arrow">&#129128;</span></button>
         </div>
 
     

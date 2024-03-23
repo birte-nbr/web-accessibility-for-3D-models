@@ -187,7 +187,7 @@ function handleAnnotationClick(annotation) {
 function getHotspotID(hotspot) {
 	hotspot.addEventListener('click', function () {
 
-		console.log('annotation clicked!');
+		//console.log('annotation clicked!');
 		hotspot.classList.add('-visited');
 		let annotationID = hotspot.getAttribute("slot"); // equals to hotspot-1
 		//console.log(annotationID);
@@ -205,7 +205,6 @@ function getNavID(dot) {
 		console.log('nav clicked!');
 		dot.classList.add('-visited');
 		let annotationID = dot.getAttribute("id"); // equals to nav-1
-		//console.log(annotationID);
 
 		let id = annotationID.split('-');   // only get number
 		annotationID = id[1];
@@ -228,46 +227,49 @@ function showTextBox(id) {
 	} else {
 		document.querySelector('.model-box').style.gridColumn = 'span 1';
 		textbox.style.display = 'block';
-		textboxArea.style.display = 'block';
-
+		textboxArea.style.display = 'block'
 	}
 }
-/*
-function closeTextBox(id) {
+// problem is rn that this function works on click call
+// not on skip call bc it will not be given the button element 
+// easiest would be to call function without parameter
+// but then how track which box was closed?
+function closeTextBox(button) {
+	console.log(button);
+	let id = button.getAttribute('id');
+	console.log(id);
 	let textbox = document.getElementById("textbox-" + id);
-	let closeButton = document.getElementById("cl-" + id);
-	closeButton.addEventListener('click', function () {
-		textbox.style.display = (textbox.style.display === 'block') ? 'none' : 'block';
-	});
-}*/
+	if (textbox.style.display == 'block'){
+			textbox.style.display = 'none';
+	}
+	//textbox.style.display = (textbox.style.display === 'block') ? 'none' : 'block';
+
+}
 
 
 // switch between text boxes 
 // forward
 
-let currentTextBoxIndex = 0; 
-const totalTextBoxes = document.querySelectorAll(".textbox");
+//let currentTextBoxIndex = 1; 
+const totalTextBoxes = document.querySelectorAll(".textbox").length;
 
 function skipForward(arrow) {
-	arrow.addEventListener('click', function () {
-		//console.log("clicked next");
+	
 		let textboxID = arrow.parentNode.getAttribute("id");
-
 		let new_id = textboxID.split('-');
-
-		textboxID = new_id[1];  // just the number
+		textboxID = new_id[1]; 
 		//closeTextBox(textboxID);  // does not work yet
-		textboxID = parseInt(textboxID); // need to convert to int to go to the next
+		textboxID = parseInt(textboxID); 
 		let newTextboxID =  (textboxID + 1) % totalTextBoxes;  // new textbox 
 		console.log(newTextboxID);
 		newTextboxID = String(newTextboxID);
 		showTextBox(newTextboxID); // that works 
-	});
+	
 }
+
 // same functionality for the left arrow
 
 function skipBackward(arrow) {
-	arrow.addEventListener('click', function () {
 		//console.log("clicked next");
 		let textboxID = arrow.parentNode.getAttribute("id");
 
@@ -279,9 +281,12 @@ function skipBackward(arrow) {
 		let newTextboxID =(textboxID - 1 + totalTextBoxes) % totalTextBoxes; // new textbox 
 		console.log(newTextboxID);
 		newTextboxID = String(newTextboxID);
-		showTextBox(newTextboxID); // that works 
-	});
+	showTextBox(newTextboxID); 
+	closeTextBox(currentTextBoxIndex);
+
 }
+
+
 
 
 
@@ -300,33 +305,38 @@ document.querySelectorAll('#color-controls button').forEach((button) => {
 
 // button functionalities
 
-// skip forward
 
-document.querySelectorAll("#next").forEach(function (arrow) {
-	skipForward(arrow);
 
-});
 
-// skip backward
 
-document.querySelectorAll("#last").forEach(function (arrow) {
-	skipBackward(arrow);
-
-});
 
 // annotations 
 
-document.querySelectorAll(".Hotspot").forEach(function (hotspot) {
+document.querySelectorAll(".Hotspot").forEach((hotspot) => {
 	getHotspotID(hotspot);
 });
 
-document.querySelectorAll(".navigation-point").forEach(function (point) {
+document.querySelectorAll("circle").forEach((point) => {
 	getNavID(point);
 });
 
 document.querySelectorAll('.Hotspot').forEach((hotspot) => {
 	hotspot.addEventListener('click', () => handleAnnotationClick(hotspot));
-});1
+});
+
+// textbox events 
+document.querySelectorAll('.close').forEach((button) => {
+	button.addEventListener('click', () => closeTextBox(button));
+});
+
+let skipB = document.querySelector('.back').addEventListener('click', function(){
+	skipBackward(skipB);
+});
+
+
+let skipF = document.querySelector('.forward').addEventListener('click', function () {
+	skipForward(skipF);
+});
 
 
 // dismiss poster once model is loaded 
