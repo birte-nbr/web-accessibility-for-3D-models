@@ -162,13 +162,27 @@ body {
 	display: none;
 	position: relative;
 }
+
+/* textboxes */
 .textbox {
 	display: none;
 	border-radius: 10%;
 	background-color: #223581;
 	height: 95%;
 	width: 95%;
+	overflow-y: auto;
+	overflow-x: hidden;
 }
+.textbox p {
+	color: #f2f4f3;
+	margin-left: 2%;
+	margin-right: 2%;
+
+}
+.textbox h4 {
+	color: #f2f4f3;
+}
+
 
 .close {
 	position: absolute;
@@ -212,7 +226,24 @@ left: 5%;
 	color: #223581; 
 	font-size: 20px;
   }
-*/
+
+  /* scrollbar */
+
+  ::-webkit-scrollbar {
+	width: 10px;
+	height: 5%;
+  }
+  
+  
+  ::-webkit-scrollbar-track {
+	background: none; 
+  }
+   
+ 
+  ::-webkit-scrollbar-thumb {
+	background: #e7e0da;
+	border-radius: 10px;
+  }
 
   
 

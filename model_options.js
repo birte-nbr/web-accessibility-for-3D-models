@@ -224,10 +224,14 @@ function showTextBox(id) {
 		document.querySelector('.model-box').style.gridColumn = 'span 2';
 		textbox.style.display = 'none';
 		textboxArea.style.display = 'none';
+		document.getElementById('last').style.visibility = 'hidden';
+		document.getElementById('next').style.visibility = 'hidden';
 	} else {
 		document.querySelector('.model-box').style.gridColumn = 'span 1';
 		textbox.style.display = 'block';
-		textboxArea.style.display = 'block'
+		textboxArea.style.display = 'block';
+		document.getElementById('last').style.visibility = 'visible';
+		document.getElementById('next').style.visibility = 'visible';
 	}
 }
 // problem is rn that this function works on click call
@@ -241,6 +245,8 @@ function closeTextBox(button) {
 	let textbox = document.getElementById("textbox-" + id);
 	if (textbox.style.display == 'block'){
 			textbox.style.display = 'none';
+			document.getElementById('next').style.visibility = 'hidden';
+			document.getElementById('last').style.visibility = 'hidden';
 	}
 	//textbox.style.display = (textbox.style.display === 'block') ? 'none' : 'block';
 
