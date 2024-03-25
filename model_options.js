@@ -293,6 +293,22 @@ function skipBackward(arrow) {
 }
 
 
+// scrolling text disappears 
+let textbox = document.querySelectorAll(".textbox").forEach((textbox) => {
+	textbox.addEventListener('scroll', function() {
+		let content = document.querySelector(".textbox-content");
+		const lineHeight = parseInt(window.getComputedStyle(content).lineHeight);
+		const bufferHeight = lineHeight * 2;  // last two lines 
+		if (content.offsetHeight > textbox.offsetHeight) {
+			console.log("text was scrolled", content.offsetHeight, textbox.scrollTop, textbox.offsetHeight, bufferHeight);
+			const isScrollable = (content.offsetHeight - textbox.scrollTop) > (textbox.offsetHeight + bufferHeight);
+			content.classList.toggle('hidden-text', isScrollable);
+		}
+	});
+}); 
+
+
+
 
 
 

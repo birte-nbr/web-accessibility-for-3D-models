@@ -166,23 +166,24 @@ body {
 /* textboxes */
 .textbox {
 	display: none;
-	border-radius: 10%;
+	border-radius: 8px;
 	background-color: #223581;
 	height: 95%;
 	width: 95%;
-	overflow-y: auto;
+	overflow-y: scroll;
 	overflow-x: hidden;
+	
 }
 .textbox p {
 	color: #f2f4f3;
 	margin-left: 2%;
 	margin-right: 2%;
+	
 
 }
 .textbox h4 {
 	color: #f2f4f3;
 }
-
 
 .close {
 	position: absolute;
@@ -242,8 +243,12 @@ left: 5%;
  
   ::-webkit-scrollbar-thumb {
 	background: #e7e0da;
-	border-radius: 10px;
+	border-radius: 0 8px 8px 0;
   }
+/* hide last few lines before scrolling */
+  .hidden-text {
+	color: blue !important;
+}
 
   
 
