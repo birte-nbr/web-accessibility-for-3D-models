@@ -214,24 +214,29 @@ function getNavID(dot) {
 	});
 }
 
-// needs altering with closing logic bc rn two or more boxes can show up
+// needs altering with closing logic 
 function showTextBox(id) {
 	//textboxVisible = true;
-	
-	let textbox = document.getElementById("textbox-" + id);
+	if (document.querySelectorAll('.textbox[style="display: block;"]').length == 0) { //check if any textbox is visible
+	let currentTextbox = document.getElementById("textbox-" + id);   // if no, show
 	let textboxArea = document.querySelector(".textbox-area");
-	if (textbox.style.display === 'block') {
+	if (currentTextbox.style.display === 'block') {
 		document.querySelector('.model-box').style.gridColumn = 'span 2';
-		textbox.style.display = 'none';
+		currentTextbox.style.display = 'none';
 		textboxArea.style.display = 'none';
-		document.getElementById('last').style.visibility = 'hidden';
+		document.getElementById('last').style.visibility = 'hidden';  // also hide the skip buttons
 		document.getElementById('next').style.visibility = 'hidden';
-	} else {
+	} else{
 		document.querySelector('.model-box').style.gridColumn = 'span 1';
-		textbox.style.display = 'block';
+		currentTextbox.style.display = 'block';
 		textboxArea.style.display = 'block';
 		document.getElementById('last').style.visibility = 'visible';
 		document.getElementById('next').style.visibility = 'visible';
+	}
+	} else {   // if yes, hide first
+		document.querySelectorAll('.textbox[style="display: block;"]').forEach((textbox=>{ 
+			textbox.style.display === 'none';
+		}))
 	}
 }
 // problem is rn that this function works on click call
@@ -253,42 +258,36 @@ function closeTextBox(button) {
 }
 
 
-// switch between text boxes 
+// skip between text boxes 
 // forward
 
-//let currentTextBoxIndex = 1; 
-const totalTextBoxes = document.querySelectorAll(".textbox").length;
-
 function skipForward(arrow) {
-	
-		let textboxID = arrow.parentNode.getAttribute("id");
-		let new_id = textboxID.split('-');
-		textboxID = new_id[1]; 
-		//closeTextBox(textboxID);  // does not work yet
-		textboxID = parseInt(textboxID); 
-		let newTextboxID =  (textboxID + 1) % totalTextBoxes;  // new textbox 
-		console.log(newTextboxID);
-		newTextboxID = String(newTextboxID);
-		showTextBox(newTextboxID); // that works 
-	
+	const currentTextbox = document.querySelector('.textbox[style="display: block;"]'); // check for textbox on display
+    const previousTextbox = currentTextbox.nextElementSibling;
+    
+    if (previousTextbox && previousTextbox.classList.contains('textbox')) {
+        currentTextbox.style.display = 'none';
+        previousTextbox.style.display = 'block';
+    } else {
+		currentTextbox.style.display = 'none';
+		document.getElementById("textbox-1").style.display = 'block'; // begin at 1 
+	}
+
 }
 
 // same functionality for the left arrow
 
-function skipBackward(arrow) {
-		//console.log("clicked next");
-		let textboxID = arrow.parentNode.getAttribute("id");
-
-		let new_id = textboxID.split('-');
-
-		textboxID = new_id[1];  // just the number
-		//closeTextBox(textboxID);  // does not work yet
-		textboxID = parseInt(textboxID); // need to convert to int to go to the next
-		let newTextboxID =(textboxID - 1 + totalTextBoxes) % totalTextBoxes; // new textbox 
-		console.log(newTextboxID);
-		newTextboxID = String(newTextboxID);
-	showTextBox(newTextboxID); 
-	closeTextBox(currentTextBoxIndex);
+function skipBackward() {
+	const currentTextbox = document.querySelector('.textbox[style="display: block;"]');
+    const previousTextbox = currentTextbox.previousElementSibling;
+    
+    if (previousTextbox && previousTextbox.classList.contains('textbox')) {
+        currentTextbox.style.display = 'none';
+        previousTextbox.style.display = 'block';
+    } else {
+		currentTextbox.style.display = 'none';
+		document.getElementById("textbox-7").style.display = 'block'; // go back to 7
+	}
 
 }
 
@@ -325,13 +324,6 @@ document.querySelectorAll('#color-controls button').forEach((button) => {
 	});
 });
 
-// button functionalities
-
-
-
-
-
-
 // annotations 
 
 document.querySelectorAll(".Hotspot").forEach((hotspot) => {
@@ -351,14 +343,6 @@ document.querySelectorAll('.close').forEach((button) => {
 	button.addEventListener('click', () => closeTextBox(button));
 });
 
-let skipB = document.querySelector('.back').addEventListener('click', function(){
-	skipBackward(skipB);
-});
-
-
-let skipF = document.querySelector('.forward').addEventListener('click', function () {
-	skipForward(skipF);
-});
 
 
 // dismiss poster once model is loaded 
